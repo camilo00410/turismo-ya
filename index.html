@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Francisco</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html">San Francisco</a>
+            </div>
+            <div class="hamburger-menu">
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Excursiones
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Precios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Ubicaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Sobre nosotros</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-clipped">
+            <div class="hero-textbox">
+                <h1 class="main-heading">San Francisco</h1>
+                <h2 class="sub-heading">
+                        CONOZCA NUESTRAS IMPRESIONANTES ATRACCIONES TURÍSTICAS
+                </h2>
+                <a href="#" class="cta-btn">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        const mainNav = document.querySelector('.main-nav');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+        hamburgerMenu.addEventListener('click' , function () {
+            mainNav.classList.toggle('open');
+        });
+
+        gsap.fromTo('.hero-clipped', {scaleX: 0}, {duration: 1, scaleX: 1});
+        gsap.fromTo('.logo', {x: -200, opacity:0}, {duration: 1, delay: .5, x:0, opacity: 1});
+        gsap.fromTo('.hamburger-menu', {x: -200, opacity:0}, {duration: 1, delay: .8, x:0, opacity: 1});
+
+        gsap.fromTo('.hero-textbox', {yPercent: 40, opacity:0}, {duration: 1, delay: 1.3, yPercent: -50, opacity: 1});
+
+    </script>
+</body>
+</html>
